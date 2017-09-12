@@ -11,4 +11,40 @@ package class5lab2.task1;
  */
 public class Business {
     
+    private String businessName;
+    private String[] ownerNames;
+    private int numberOfEmployees;
+    
+    public double getWeeklyRevenue(){
+        return 0;
+    }
+
+    public String getBusinessName() {
+        return businessName;
+    }
+
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
+    }
+
+    public String[] getOwnerNames() {
+        return ownerNames;
+    }
+
+    public void setOwnerNames(String[] ownerNames) {
+        this.ownerNames = ownerNames;
+    }
+
+    public int getNumberOfEmployees() {
+        return numberOfEmployees;
+    }
+
+    public void setNumberOfEmployees(int numberOfEmployees) {
+        this.numberOfEmployees = numberOfEmployees;
+    }
+    
+    
+    
+    
+    
 }
