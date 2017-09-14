@@ -14,11 +14,38 @@ public class Business {
     private String businessName;
     private String[] ownerNames;
     private int numberOfEmployees;
+    private double dayRevenue;
+    private double weekRevenue;
+    private double monthRevenue;
     
-    public double getWeeklyRevenue(){
-        return 0;
+    public String getTypeOfBusiness(){
+        return "";
     }
 
+    public double getDayRevenue() {
+        return dayRevenue;
+    }
+
+    public void setDayRevenue(double dayRevenue) {
+        this.dayRevenue = dayRevenue;
+    }
+
+    public double getWeekRevenue() {
+        return weekRevenue;
+    }
+
+    public void setWeekRevenue(double weekRevenue) {
+        this.weekRevenue = weekRevenue;
+    }
+
+    public double getMonthRevenue() {
+        return monthRevenue;
+    }
+
+    public void setMonthRevenue(double monthRevenue) {
+        this.monthRevenue = monthRevenue;
+    }
+    
     public String getBusinessName() {
         return businessName;
     }

@@ -10,5 +10,19 @@ package class5lab2.task1;
  * @author cwerning
  */
 public class StartUp {
-    
+
+    public static void main(String[] args) {
+
+        Business business = new Business();
+        System.out.println(business.getTypeOfBusiness());
+        
+        Restaurant restaurant = new Restaurant();
+        restaurant.setFoodType("Mexican");
+        System.out.println(restaurant.getTypeOfBusiness());
+        
+        McDonalds mcdonalds = new McDonalds();
+        mcdonalds.setFoodType("American");
+        System.out.println(mcdonalds.getTypeOfBusiness());
+
+    }
 }
