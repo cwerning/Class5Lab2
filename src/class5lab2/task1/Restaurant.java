@@ -26,6 +26,9 @@ public class Restaurant extends Business {
     }
 
     public void setFoodType(String foodType) {
+        if(foodType == null || foodType.isEmpty()) {
+            throw new IllegalArgumentException("Food Type is required");
+        }
         this.foodType = foodType;
     }
 
@@ -34,6 +37,9 @@ public class Restaurant extends Business {
     }
 
     public void setEntrees(String[] entrees) {
+        if(entrees == null) {
+            throw new IllegalArgumentException("Entrees is required");
+        }
         this.entrees = entrees;
     }
 
@@ -42,6 +48,9 @@ public class Restaurant extends Business {
     }
 
     public void setAppetizers(String[] appetizers) {
+        if(appetizers == null) {
+            throw new IllegalArgumentException("Appetizers is required");
+        }
         this.appetizers = appetizers;
     }
 
@@ -50,6 +59,9 @@ public class Restaurant extends Business {
     }
 
     public void setDeserts(String[] deserts) {
+        if(deserts == null) {
+            throw new IllegalArgumentException("Deserts is required");
+        }
         this.deserts = deserts;
     }
 }

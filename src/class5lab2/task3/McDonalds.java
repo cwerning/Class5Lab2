@@ -12,7 +12,7 @@ package class5lab2.task3;
 public class McDonalds extends Restaurant{
     private String[] dollarMenuItems;
     private String[] breakfastMenu;
-    private String[] Drinks;
+    private String[] drinks;
     private String[] afterBreakfastMenu;
     
     @Override
@@ -25,6 +25,9 @@ public class McDonalds extends Restaurant{
     }
 
     public void setDollarMenuItems(String[] dollarMenuItems) {
+        if(dollarMenuItems == null) {
+            throw new IllegalArgumentException("Dollar menu items are required");
+        }
         this.dollarMenuItems = dollarMenuItems;
     }
 
@@ -33,15 +36,21 @@ public class McDonalds extends Restaurant{
     }
 
     public void setBreakfastMenu(String[] breakfastMenu) {
+        if(breakfastMenu == null) {
+            throw new IllegalArgumentException("Breakfast menu items are required");
+        }
         this.breakfastMenu = breakfastMenu;
     }
 
     public String[] getDrinks() {
-        return Drinks;
+        return drinks;
     }
 
-    public void setDrinks(String[] Drinks) {
-        this.Drinks = Drinks;
+    public void setDrinks(String[] drinks) {
+        if(drinks == null) {
+            throw new IllegalArgumentException("Drink items are required");
+        }
+        this.drinks = drinks;
     }
 
     public String[] getAfterBreakfastMenu() {
@@ -49,6 +58,9 @@ public class McDonalds extends Restaurant{
     }
 
     public void setAfterBreakfastMenu(String[] afterBreakfastMenu) {
+        if(afterBreakfastMenu == null) {
+            throw new IllegalArgumentException("After breakfast menu is required");
+        }
         this.afterBreakfastMenu = afterBreakfastMenu;
     }
     

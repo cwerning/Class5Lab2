@@ -20,11 +20,14 @@ public abstract class Business {
     
     public abstract String getTypeOfBusiness();
 
-    public double getDayRevenue() {
+   public double getDayRevenue() {
         return dayRevenue;
     }
 
     public void setDayRevenue(double dayRevenue) {
+        if(dayRevenue < 0 ) {
+            throw new IllegalArgumentException("You canno't be negative in revenue");
+        }
         this.dayRevenue = dayRevenue;
     }
 
@@ -33,6 +36,9 @@ public abstract class Business {
     }
 
     public void setWeekRevenue(double weekRevenue) {
+          if(weekRevenue < 0 ) {
+            throw new IllegalArgumentException("You canno't be negative in revenue");
+        }
         this.weekRevenue = weekRevenue;
     }
 
@@ -41,6 +47,9 @@ public abstract class Business {
     }
 
     public void setMonthRevenue(double monthRevenue) {
+          if(monthRevenue < 0 ) {
+            throw new IllegalArgumentException("You canno't be negative in revenue");
+        }
         this.monthRevenue = monthRevenue;
     }
     
@@ -49,6 +58,9 @@ public abstract class Business {
     }
 
     public void setBusinessName(String businessName) {
+          if(businessName == null || businessName.isEmpty()) {
+            throw new IllegalArgumentException("Business name is required");
+        }
         this.businessName = businessName;
     }
 
@@ -57,6 +69,9 @@ public abstract class Business {
     }
 
     public void setOwnerNames(String[] ownerNames) {
+          if(ownerNames == null) {
+            throw new IllegalArgumentException("Owner name is required");
+        }
         this.ownerNames = ownerNames;
     }
 
@@ -65,8 +80,12 @@ public abstract class Business {
     }
 
     public void setNumberOfEmployees(int numberOfEmployees) {
+           if(numberOfEmployees < 0) {
+            throw new IllegalArgumentException("Number of Employees cannot be negative.");
+        }
         this.numberOfEmployees = numberOfEmployees;
     }
+    
     
     
     

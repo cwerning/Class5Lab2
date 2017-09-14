@@ -35,6 +35,9 @@ public class Restaurant implements Business {
     }
 
     public void setFoodType(String foodType) {
+        if(foodType == null || foodType.isEmpty()) {
+            throw new IllegalArgumentException("Food Type is required");
+        }
         this.foodType = foodType;
     }
 
@@ -43,6 +46,9 @@ public class Restaurant implements Business {
     }
 
     public void setEntrees(String[] entrees) {
+        if(entrees == null) {
+            throw new IllegalArgumentException("Entrees is required");
+        }
         this.entrees = entrees;
     }
 
@@ -51,6 +57,9 @@ public class Restaurant implements Business {
     }
 
     public void setAppetizers(String[] appetizers) {
+        if(appetizers == null) {
+            throw new IllegalArgumentException("Appetizers is required");
+        }
         this.appetizers = appetizers;
     }
 
@@ -59,16 +68,23 @@ public class Restaurant implements Business {
     }
 
     public void setDeserts(String[] deserts) {
+        if(deserts == null) {
+            throw new IllegalArgumentException("Deserts is required");
+        }
         this.deserts = deserts;
     }
-
+    
     @Override
     public double getDayRevenue() {
+       
         return dayRevenue;
     }
 
     @Override
     public void setDayRevenue(double dayRevenue) {
+        if(dayRevenue < 0 ) {
+            throw new IllegalArgumentException("You canno't be negative in revenue");
+        }
         this.dayRevenue = dayRevenue;
     }
 
@@ -79,6 +95,9 @@ public class Restaurant implements Business {
 
     @Override
     public void setWeekRevenue(double weekRevenue) {
+          if(weekRevenue < 0 ) {
+            throw new IllegalArgumentException("You canno't be negative in revenue");
+        }
         this.weekRevenue = weekRevenue;
     }
 
@@ -87,19 +106,14 @@ public class Restaurant implements Business {
         return monthRevenue;
     }
 
-    /**
-     *
-     * @param monthRevenue
-     */
     @Override
     public void setMonthRevenue(double monthRevenue) {
+          if(monthRevenue < 0 ) {
+            throw new IllegalArgumentException("You canno't be negative in revenue");
+        }
         this.monthRevenue = monthRevenue;
     }
-
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public String getBusinessName() {
         return businessName;
@@ -107,6 +121,9 @@ public class Restaurant implements Business {
 
     @Override
     public void setBusinessName(String businessName) {
+          if(businessName == null || businessName.isEmpty()) {
+            throw new IllegalArgumentException("Business name is required");
+        }
         this.businessName = businessName;
     }
 
@@ -117,6 +134,9 @@ public class Restaurant implements Business {
 
     @Override
     public void setOwnerNames(String[] ownerNames) {
+          if(ownerNames == null) {
+            throw new IllegalArgumentException("Owner name is required");
+        }
         this.ownerNames = ownerNames;
     }
 
@@ -127,6 +147,9 @@ public class Restaurant implements Business {
 
     @Override
     public void setNumberOfEmployees(int numberOfEmployees) {
+           if(numberOfEmployees < 0) {
+            throw new IllegalArgumentException("Number of Employees cannot be negative.");
+        }
         this.numberOfEmployees = numberOfEmployees;
     }
     
